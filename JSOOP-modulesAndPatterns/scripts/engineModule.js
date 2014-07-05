@@ -8,6 +8,7 @@ var engineModule = (function () {
             SPEED = dataModule.GAME_SPEED,
             OBSTACLES = dataModule.OBSTACLES,
             SEGMENTS_TO_LEVEL_UP = dataModule.SEGMENTS_TO_LEVEL_UP,
+            SCORES_TO_REMEMBER = dataModule.SCORES_TO_REMEMBER,
             Player,
             Engine,
             snake,
@@ -193,38 +194,44 @@ var engineModule = (function () {
         function getHighScoresInfo() {
             var highScores = document.querySelector('.high-scores'),
                 visibleHighScores,
-                thisScore = document.createElement('li'),
+                thisScoreEntry = document.createElement('li'),
                 individualScores = document.querySelectorAll('.high-scores-entry'),
+                currentHighScore,
+                wasAdded,
                 i,
-                wasAdded = false,
-                len = individualScores.length > 5 ? 5 : individualScores.length;
+                len;
 
-            player.name = prompt('Please input your name:');
-            thisScore.classList.add('high-scores-entry');
-            thisScore.dataset.name = player.name;
-            thisScore.dataset.score = player.score | 0;
-            thisScore.innerText = player.name + ' | ' + (player.score | 0);
+            if (individualScores.length < SCORES_TO_REMEMBER || player.score > individualScores[individualScores.length - 1].dataset.score * 1) {
+                player.name = prompt('Please input your name:');
+                thisScoreEntry.classList.add('high-scores-entry');
+                thisScoreEntry.dataset.name = player.name;
+                thisScoreEntry.dataset.score = player.score | 0;
+                thisScoreEntry.innerText = player.name + ' | ' + (player.score | 0);
 
-            for (i = 0; i < len; i += 1) {
-                var thisHighScore = individualScores[i].dataset.score * 1;
-                if (player.score >= thisHighScore) {
-                    highScores.insertBefore(thisScore, individualScores[i]);
-                    wasAdded = true;
-                    break;
+                wasAdded = false;
+                len = individualScores.length > SCORES_TO_REMEMBER ? SCORES_TO_REMEMBER : individualScores.length;
+
+                for (i = 0; i < len; i += 1) {
+                    currentHighScore = individualScores[i].dataset.score * 1;
+
+                    if (player.score >= currentHighScore) {
+                        highScores.insertBefore(thisScoreEntry, individualScores[i]);
+                        wasAdded = true;
+                        break;
+                    }
                 }
-            }
 
-            if (individualScores.length < 5 && !wasAdded) {
-                highScores.appendChild(thisScore);
-            }
+                if (individualScores.length < SCORES_TO_REMEMBER && !wasAdded) {
+                    highScores.appendChild(thisScoreEntry);
+                }
 
-            while (highScores.children.length > 5) {
-                highScores.removeChild(individualScores[individualScores.length - 1]);
+                while (highScores.children.length > SCORES_TO_REMEMBER) {
+                    highScores.removeChild(individualScores[individualScores.length - 1]);
+                }
             }
 
             visibleHighScores = highScores.cloneNode(true);
             visibleHighScores.classList.remove('hidden');
-            //visibleHighScores.innerHTML = highScores.innerHTML;
 
             return visibleHighScores;
         }

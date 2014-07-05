@@ -29,6 +29,7 @@ var dataModule = (function () {
             FOOD_STROKE: 'darkred',
             OBSTACLE_FILL: 'gray',
             OBSTACLE_STROKE: 'darkgray'
-        }
+        },
+        SCORES_TO_REMEMBER: 5
     }
 }());

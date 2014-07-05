@@ -191,29 +191,42 @@ var engineModule = (function () {
         }
 
         function getHighScoresInfo() {
-            var highScores = document.getElementById('high-scores').cloneNode(true),
-                thisScore = document.createElement('li');
+            var highScores = document.querySelector('.high-scores'),
+                visibleHighScores,
+                thisScore = document.createElement('li'),
+                individualScores = document.querySelectorAll('.high-scores-entry'),
+                i,
+                wasAdded = false,
+                len = individualScores.length > 5 ? 5 : individualScores.length;
 
+            player.name = prompt('Please input your name:');
             thisScore.classList.add('high-scores-entry');
-            thisScore.setData('name', player.name);
-            thisScore.setData('score', player.score.toString());
-            thisScore.innerText = 'Player: ' + player.name + ' / Score: ' + player.score;
+            thisScore.dataset.name = player.name;
+            thisScore.dataset.score = player.score | 0;
+            thisScore.innerText = player.name + ' | ' + (player.score | 0);
 
-            if (highScores.innerHTML) {
-                var individualScores = document.querySelectorAll('.high-scores-entry');
-                for (var i = 0, len = individualScores.length; i < len; i += 1) {
-                    var thisScore = individualScores[i].getData('score') * 1;
-                    if (player.score > thisScore) {
-                        highScores.insertBefore(thisScore, individualScores[i]);
-                        break;
-                    }
+            for (i = 0; i < len; i += 1) {
+                var thisHighScore = individualScores[i].dataset.score * 1;
+                if (player.score >= thisHighScore) {
+                    highScores.insertBefore(thisScore, individualScores[i]);
+                    wasAdded = true;
+                    break;
                 }
-                player.name = prompt('Please input your name:');
-            } else {
+            }
+
+            if (individualScores.length < 5 && !wasAdded) {
                 highScores.appendChild(thisScore);
             }
 
-            return highScores;
+            while (highScores.children.length > 5) {
+                highScores.removeChild(individualScores[individualScores.length - 1]);
+            }
+
+            visibleHighScores = highScores.cloneNode(true);
+            visibleHighScores.classList.remove('hidden');
+            //visibleHighScores.innerHTML = highScores.innerHTML;
+
+            return visibleHighScores;
         }
 
         function increaseLevel() {

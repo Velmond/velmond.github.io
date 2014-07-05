@@ -4,10 +4,13 @@
     <meta charset="UTF-8">
     <title>Homework - Modules And Patterns - Snake</title>
     <style>
-        .hidden {
-            display: none;
+        ul {
             list-style-type: none;
             padding: 0;
+        }
+
+        .hidden {
+            display: none;
         }
     </style>
 </head>
@@ -18,8 +21,7 @@
 <script src="scripts/drawModule.js" type="text/javascript"></script>
     <p id="firefox-warning" style="color: red">Information seems to not show up in FireFox but everything works in Chrome. If you're using Firefox you need to click somewhere to start the game.</p>
 
-    <ul id="high-scores" class="hidden">
-    </ul>
+    <ul class="high-scores hidden"></ul>
 
     <script>
         var eng = new engineModule.Engine();

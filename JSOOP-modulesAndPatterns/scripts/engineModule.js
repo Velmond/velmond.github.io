@@ -98,7 +98,7 @@ var engineModule = (function () {
         }
 
         Player = function () {
-            // Could get extended to ask for a name and save score at some point
+            this.name = '';
             this.score = 0;
         };
 
@@ -176,6 +176,7 @@ var engineModule = (function () {
             if (!snake.isAlive) {
                 clearInterval(gameID);
                 displayInfo('GAME OVER');
+                infoDiv.appendChild(getHighScoresInfo());
                 return;
             }
 
@@ -187,6 +188,32 @@ var engineModule = (function () {
             player.score += 0.1;
             renderer.clear();
             renderer.draw(gameElements);
+        }
+
+        function getHighScoresInfo() {
+            var highScores = document.getElementById('high-scores').cloneNode(true),
+                thisScore = document.createElement('li');
+
+            thisScore.classList.add('high-scores-entry');
+            thisScore.setData('name', player.name);
+            thisScore.setData('score', player.score.toString());
+            thisScore.innerText = 'Player: ' + player.name + ' / Score: ' + player.score;
+
+            if (highScores.innerHTML) {
+                var individualScores = document.querySelectorAll('.high-scores-entry');
+                for (var i = 0, len = individualScores.length; i < len; i += 1) {
+                    var thisScore = individualScores[i].getData('score') * 1;
+                    if (player.score > thisScore) {
+                        highScores.insertBefore(thisScore, individualScores[i]);
+                        break;
+                    }
+                }
+                player.name = prompt('Please input your name:');
+            } else {
+                highScores.appendChild(thisScore);
+            }
+
+            return highScores;
         }
 
         function increaseLevel() {

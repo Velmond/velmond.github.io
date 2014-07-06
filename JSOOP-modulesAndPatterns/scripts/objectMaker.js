@@ -1,5 +1,5 @@
 var objectMaker = (function () {
-    'using strict';
+    'use strict';
 
     var DIRECTION = dataModule.DIRECTION,
         SnakeBodySegment,

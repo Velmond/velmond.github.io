@@ -1,5 +1,5 @@
 define(function () {
-    'using strict';
+    'use strict';
     var people = [{
         id: 1,
         name: 'Doncho Minkov',

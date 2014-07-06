@@ -1,5 +1,5 @@
 define(['jquery', 'handlebars'], function ($, HB) {
-    'using strict';
+    'use strict';
     var ComboBox = (function () {
         var ComboBox = function (collection) {
             this._options = collection instanceof Array ? collection : '';

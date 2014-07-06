@@ -1,5 +1,5 @@
 var engineModule = (function () {
-    'using strict';
+    'use strict';
 
     var Engine = (function () {
         var DIRECTION = dataModule.DIRECTION,

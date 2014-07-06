@@ -24,7 +24,7 @@
 //     || </div>
 
 (function () {
-    'using strict';
+    'use strict';
     require.config({
         paths: {
             'jquery': 'libs/jquery-1.11.1.min',

@@ -1,5 +1,5 @@
 var drawModule = (function () {
-    'using strict';
+    'use strict';
 
     var Renderer = (function () {
         var FIELD = dataModule.FIELD,

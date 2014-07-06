@@ -1,0 +1,81 @@
+.control-comboBox p {
+    padding: 0;
+    margin: 0;
+}
+
+.control-comboBox {
+    font-family: "Segoe UI Light","Segoe WPC","Segoe UI", Helvetica, Arial, "Arial Unicode MS", Sans-Serif;
+    text-align: center;
+    cursor: pointer;
+    width: 180px;
+    -webkit-user-select: none; /* Chrome/Safari */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* IE10+ */
+    -o-user-select: none;
+    user-select: none;
+}
+
+    .control-comboBox .control-comboBox-option {
+        background: lightgray;
+        height: auto;
+        padding: 10px;
+        position: relative;
+        z-index : 1;
+    }
+
+        .control-comboBox .control-comboBox-option:not(:last-of-type):not(:first-of-type):before {
+            content: "";
+            position: absolute;
+            left: 20px;
+            bottom: 0;
+            height: 1px;
+            width: 140px;
+            border-bottom: 1px solid dimgray;
+        }
+
+        .control-comboBox .control-comboBox-option:hover {
+            background: darkgray;
+        }
+
+        .control-comboBox .control-comboBox-option.selected {
+            background: gray;
+            padding: 10px;
+            border: none;
+        }
+
+            .control-comboBox .control-comboBox-option.selected:hover {
+                background: darkgray;
+            }
+
+        .control-comboBox .control-comboBox-option img {
+            padding-top: 10px;
+            resize: both;
+            width: 25%;
+        }
+
+            .control-comboBox .control-comboBox-option.selected img {
+                resize: both;
+                width: auto;
+            }
+
+                .control-comboBox .control-comboBox-option.selected:hover img {
+                    opacity: 0.8;
+                    filter: alpha(opacity=80);
+                }
+
+        .control-comboBox .control-comboBox-option strong {
+            font-weight: bolder;
+            font-style: italic;
+            display: inline-block;
+            text-align: left;
+            width: 130px;
+        }
+
+        .control-comboBox .control-comboBox-option p {
+            font-weight: lighter;
+            display: inline-block;
+        }
+
+            .control-comboBox .control-comboBox-option p:before {
+                content: ' | ';
+            }

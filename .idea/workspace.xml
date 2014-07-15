@@ -1,15 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e9546e50-4a71-4c5f-ad91-8a80b4fc1b06" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JSOOP-AMDandRequireJS/scripts/app.js" afterPath="$PROJECT_DIR$/JSOOP-AMDandRequireJS/scripts/app.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JSOOP-AMDandRequireJS/scripts/controls.js" afterPath="$PROJECT_DIR$/JSOOP-AMDandRequireJS/scripts/controls.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JSOOP-AMDandRequireJS/scripts/data.js" afterPath="$PROJECT_DIR$/JSOOP-AMDandRequireJS/scripts/data.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JSOOP-modulesAndPatterns/scripts/dataModule.js" afterPath="$PROJECT_DIR$/JSOOP-modulesAndPatterns/scripts/dataModule.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JSOOP-modulesAndPatterns/scripts/drawModule.js" afterPath="$PROJECT_DIR$/JSOOP-modulesAndPatterns/scripts/drawModule.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JSOOP-modulesAndPatterns/scripts/engineModule.js" afterPath="$PROJECT_DIR$/JSOOP-modulesAndPatterns/scripts/engineModule.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JSOOP-modulesAndPatterns/scripts/objectMaker.js" afterPath="$PROJECT_DIR$/JSOOP-modulesAndPatterns/scripts/objectMaker.js" />
-    </list>
+    <list default="true" id="e9546e50-4a71-4c5f-ad91-8a80b4fc1b06" name="Default" comment="" />
     <ignored path="velmond.github.io.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -106,8 +98,8 @@
       <file leaf-file-name="data.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/JSOOP-AMDandRequireJS/scripts/data.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.2176" vertical-offset="0" max-vertical-offset="625">
-              <caret line="8" column="14" selection-start-line="8" selection-start-column="14" selection-end-line="8" selection-end-column="14" />
+            <state vertical-scroll-proportion="0.3536" vertical-offset="0" max-vertical-offset="625">
+              <caret line="13" column="14" selection-start-line="13" selection-start-column="14" selection-end-line="13" selection-end-column="14" />
               <folding />
             </state>
           </provider>
@@ -377,8 +369,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/JSOOP-AMDandRequireJS/scripts/data.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.2176" vertical-offset="0" max-vertical-offset="625">
-          <caret line="8" column="14" selection-start-line="8" selection-start-column="14" selection-end-line="8" selection-end-column="14" />
+        <state vertical-scroll-proportion="0.3536" vertical-offset="0" max-vertical-offset="625">
+          <caret line="13" column="14" selection-start-line="13" selection-start-column="14" selection-end-line="13" selection-end-column="14" />
           <folding />
         </state>
       </provider>

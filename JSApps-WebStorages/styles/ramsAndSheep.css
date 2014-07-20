@@ -1,0 +1,77 @@
+﻿body {
+    font-family: 'Courier New', Arial, sans-serif;
+}
+
+#input-container {
+    width: 920px;
+    height: 31px;
+    padding: 20px;
+    background: black;
+    color: white;
+    position: relative;
+}
+
+        #input-container > input[type="text"] {
+            border: none;
+            font-size: .9em;
+            border-radius: 0;
+            padding: 5px 10px;
+            background: #888888;
+            color: white;
+            font-family: 'Courier New', Arial, sans-serif;
+        }
+
+            #input-container > input[type="text"]::-webkit-input-placeholder {
+                color: #666666;
+            }
+
+            #input-container > input[type="text"]:focus {
+                outline: 0;
+            }
+
+        #input-container > label {
+            font-size: 1.0em;
+            display: inline-block;
+            width: 100px;
+        }
+
+        #input-container > #buttons-container {
+            position: absolute;
+            top: 5px;
+            right: 20px;
+        }
+
+            #input-container > #buttons-container > button {
+                float: right;
+                height: 60px;
+                padding-left: 20px;
+                padding-right: 20px;
+                border: none;
+                border-radius: 0;
+                background: #888888;
+                color: white;
+                font-family: 'Courier New', Arial, sans-serif;
+                font-weight: bold;
+                font-size: 1.0em;
+            }
+
+                #input-container > #buttons-container > button:hover {
+                    background: #bbbbbb;
+                }
+
+                #input-container > #buttons-container > button:focus {
+                    outline: 0;
+                }
+
+#result-container {
+    width: 920px;
+    height: 360px;
+    padding: 20px;
+    background: #888888;
+    color: white;
+    overflow-y: auto;
+}
+
+    #result-container span.highlight {
+        color: coral;
+    }
